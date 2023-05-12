@@ -5,7 +5,7 @@
 <div class="container">
     <div id="dash"></div>
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-16">
             <div class="card">
 
                 <div class="card-header"><h1>Formations</h1></div>
@@ -13,7 +13,7 @@
                 <div class="card-body">
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
-                        Ajouter Categorie
+                        Ajouter Formation
                     </button>
 
                     <!-- Modal -->
@@ -29,32 +29,37 @@
                                 <div class="modal-body">
                                     {!! csrf_field() !!}
                                     <div class="mb-3">
-                                      <label for="libelle" class="form-label">libelle</label>
-                                      <input type="text" class="form-control" id="libelle" name="libelle">
+                                      <label for="nom" class="form-label">Nom</label>
+                                      <input type="text" class="form-control" id="nom" name="nom">
                                     </div>
                                     <div class="mb-3">
-                                      <label for="description" class="form-label">description</label>
+                                      <label for="description" class="form-label">Description</label>
                                       <input type="text" class="form-control" id="description" name="description">
                                     </div>
                                     <div class="mb-3">
-                                      <label for="description" class="form-label">Prerequis</label>
-                                      <input type="text" class="form-control" id="description" name="description">
+                                      <label for="prerequisFormation" class="form-label">Prerequis de Formation</label>
+                                      <input type="text" class="form-control" id="prerequisFormation" name="prerequisFormation">
                                     </div>
                                     <div class="mb-3">
-                                      <label for="description" class="form-label">Niveau Difficulte</label>
-                                      <input type="text" class="form-control" id="description" name="description">
+                                      <label for="niveauDifficulte" class="form-label">Niveau Difficulte</label>
+                                      {{-- <input type="text" class="form-control" id="niveauDifficulte" name="niveauDifficulte"> --}}
+                                      <select class="form-control" name="niveauDifficulte" id="niveauDifficulte">
+                                        <option value="facile">Facile</option>
+                                        <option value="moyen">Moyen</option>
+                                        <option value="difficile">Difficile</option>
+                                      </select>
                                     </div>
                                     <div class="mb-3">
-                                      <label for="description" class="form-label">Programme</label>
-                                      <input type="text" class="form-control" id="description" name="description">
+                                      <label for="programme" class="form-label">Programme</label>
+                                      <input type="text" class="form-control" id="programme" name="programme">
                                     </div>
                                     <div class="mb-3">
-                                      <label for="description" class="form-label">Prix</label>
-                                      <input type="text" class="form-control" id="description" name="description">
+                                      <label for="prix" class="form-label">Prix</label>
+                                      <input type="text" class="form-control" id="prix" name="prix">
                                     </div>
                                     <div class="mb-3">
-                                      <label for="description" class="form-label">Duree Formation /Heure</label>
-                                      <input type="text" class="form-control" id="description" name="description">
+                                      <label for="dureeFormationParHeure" class="form-label">Duree Formation /Heure</label>
+                                      <input type="text" class="form-control" id="dureeFormationParHeure" name="dureeFormationParHeure">
                                     </div>
                                     {{-- <div class="mb-3">
                                       <label for="description" class="form-label">Section</label>
@@ -77,7 +82,7 @@
                             <thead>
                               <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Libelle</th>
+                                <th scope="col">Nom</th>
                                 <th scope="col">Description</th>
                                 <th scope="col">Prerequis</th>
                                 <th scope="col">Niveau Difficulte</th>
@@ -93,7 +98,7 @@
 
                                 <tr>
                                   <th scope="row">{{ $formation->id }}</th>
-                                  <td>{{ $formation->libelle }}</td>
+                                  <td>{{ $formation->nom }}</td>
                                   <td>{{ $formation->description }}</td>
                                   <td>{{ $formation->prerequisFormation }}</td>
                                   <td>{{ $formation->niveauDifficulte }}</td>
@@ -131,15 +136,33 @@
                                             <div class="modal-body">
                                                 {!! csrf_field() !!}
                                                 <div class="mb-3">
-                                                  <label for="libelle" class="form-label">libelle</label>
-                                                  <input type="text" class="form-control" id="libelle" name="libelle" value="{{ $formation->libelle }}">
+                                                  <label for="nom" class="form-label">Nom</label>
+                                                  <input type="text" class="form-control" id="nom" name="nom" value="{{ $formation->nom }}">
                                                 </div>
                                                 <div class="mb-3">
-                                                  <label for="description" class="form-label">description</label>
+                                                  <label for="description" class="form-label">Description</label>
                                                   <input type="text" class="form-control" id="description" name="description" value="{{ $formation->description }}">
                                                 </div>
-
-
+                                                <div class="mb-3">
+                                                    <label for="prerequisFormation" class="form-label">Prerequis de la formation</label>
+                                                    <input type="text" class="form-control" id="prerequisFormation" name="prerequisFormation" value="{{ $formation->prerequisFormation }}">
+                                                  </div>
+                                                  <div class="mb-3">
+                                                    <label for="niveauDifficulte" class="form-label">Niveau Difficulte</label>
+                                                    <input type="text" class="form-control" id="niveauDifficulte" name="niveauDifficulte" value="{{ $formation->niveauDifficulte }}">
+                                                  </div>
+                                                  <div class="mb-3">
+                                                    <label for="programme" class="form-label">Programme</label>
+                                                    <input type="text" class="form-control" id="programme" name="programme" value="{{ $formation->programme }}">
+                                                  </div>
+                                                  <div class="mb-3">
+                                                    <label for="prix" class="form-label">Prix</label>
+                                                    <input type="text" class="form-control" id="prix" name="prix" value="{{ $formation->prix }}">
+                                                  </div>
+                                                  <div class="mb-3">
+                                                    <label for="dureeFormationParHeure" class="form-label">Duree Formation /Heure</label>
+                                                    <input type="text" class="form-control" id="dureeFormationParHeure" name="dureeFormationParHeure"  value="{{ $formation->dureeFormationParHeure }}">
+                                                  </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>

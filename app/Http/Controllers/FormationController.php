@@ -41,6 +41,8 @@ class FormationController extends Controller
         $formation->dureeFormationParHeure = $request->input('dureeFormationParHeure');
 
         $formation->save();
+
+        return redirect()->back()->with('success', 'Data added successfully');
     }
 
     /**
@@ -76,6 +78,8 @@ class FormationController extends Controller
         $formation->dureeFormationParHeure = $request->input('dureeFormationParHeure');
 
         $formation->save();
+
+        return redirect()->back()->with('success', 'Data updated successfully');
     }
 
     /**
@@ -87,8 +91,8 @@ class FormationController extends Controller
 
         if($formation){
             $formation->delete();
-            return response()->json(['message' => 'Formation supprimée avec succès']);
+            return redirect()->back()->with('success', 'Data deleted successfully');
         }
-        return response()->json(['message' => 'Impossible de trouver la Formation'], 404);
+        return redirect()->back()->with('warning', 'Impossible de trouver la catégorie');
     }
 }
