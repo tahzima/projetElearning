@@ -2,7 +2,7 @@
 
 <html lang="en">
 	<head><base href="">
-		<title>territoire vert</title>
+		<title>E-learning</title>
 		<link rel="icon" type="image/png" href="{{asset('images/logo.png')}}" />
 		<meta charset="utf-8" />
 		<meta name="description" content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 94,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
@@ -70,7 +70,7 @@
 								</div> --}}
 
 								<div class="menu-item">
-									<a class="menu-link active" href="">
+									<a class="menu-link active" href="{{ route('formation')}}">
 										<span class="menu-icon">
 											<span class="svg-icon svg-icon-2">
 												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo" viewBox="0 0 16 16">

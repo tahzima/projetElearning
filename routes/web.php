@@ -36,4 +36,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/categorie/update/{id}',[CategorieController::class, 'update'])->name('updateCategorie');
     Route::delete('/categorie/delete/{id}',[CategorieController::class, 'destroy'])->name('deleteCategory');
     Route::get('/categorie/search/{id}',[CategorieController::class, 'show']);
+
+    Route::get('/formation/all',[FormationController::class, 'index'])->name('formation');
+    Route::post('/formation/add',[FormationController::class, 'store'])->name('addformation');
+    Route::post('/formation/update/{id}',[FormationController::class, 'update'])->name('updateFormation');
+    Route::delete('/formation/delete/{id}',[FormationController::class, 'destroy'])->name('deleteFormation');
 });

@@ -12,8 +12,9 @@ class FormationController extends Controller
      */
     public function index()
     {
-        $formation = Formation::all();
-        return response()->json($formation);
+        $formations = Formation::all();
+        // return response()->json($formation);
+        return view('formation.index')->with('formations', $formations);
     }
 
     /**
