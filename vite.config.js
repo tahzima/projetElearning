@@ -28,10 +28,3 @@ export default defineConfig({
     },
 
 });
-module.exports = {
-    server: {
-      hmr: {
-        overlay: false,
-      },
-    },
-  };
