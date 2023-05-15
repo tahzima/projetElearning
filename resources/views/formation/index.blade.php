@@ -61,10 +61,16 @@
                                       <label for="dureeFormationParHeure" class="form-label">Duree Formation /Heure</label>
                                       <input type="text" class="form-control" id="dureeFormationParHeure" name="dureeFormationParHeure">
                                     </div>
-                                    {{-- <div class="mb-3">
-                                      <label for="description" class="form-label">Section</label>
-                                      <input type="text" class="form-control" id="description" name="description">
-                                    </div> --}}
+                                    <div class="mb-3">
+                                      <label for="categorie_id" class="form-label">Categories</label>
+                                      {{-- <input type="text" class="form-control" id="description" name="description"> --}}
+                                      <select class="form-control"id="categorie_id" name="categorie_id">
+                                        <option></option>
+                                        @foreach ( $categories as $category)
+                                            <option value="{{$category->id}}">{{ $category->libelle }}</option>
+                                        @endforeach
+                                      </select>
+                                    </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
@@ -89,6 +95,7 @@
                                 <th scope="col">Programme</th>
                                 <th scope="col">Prix</th>
                                 <th scope="col">Duree Formation /Heure</th>
+                                <th scope="col">Categorie</th>
                                 <th scope="col">Action</th>
 
                               </tr>
@@ -105,6 +112,7 @@
                                   <td>{{ $formation->programme }}</td>
                                   <td>{{ $formation->prix }}</td>
                                   <td>{{ $formation->dureeFormationParHeure }}</td>
+                                  <td>{{ $formation->categorie->libelle }}</td>
                                   {{-- <td>{{ $category->categorie ? $category->categorie->libelle : "No Parent Categorie"}}</td> --}}
                                   <td>
                                     <form class="" action="{{ route('deleteFormation' , $formation->id) }}" method="POST">
@@ -162,6 +170,16 @@
                                                   <div class="mb-3">
                                                     <label for="dureeFormationParHeure" class="form-label">Duree Formation /Heure</label>
                                                     <input type="text" class="form-control" id="dureeFormationParHeure" name="dureeFormationParHeure"  value="{{ $formation->dureeFormationParHeure }}">
+                                                  </div>
+                                                  <div class="mb-3">
+                                                    <label for="categorie_id" class="form-label">Categorie</label>
+                                                    {{-- <input type="text" class="form-control" id="description" name="description"> --}}
+                                                    <select class="form-control"id="categorie_id" name="categorie_id">
+                                                      <option value="" >No Parent</option>
+                                                      @foreach ( $categories as $category)
+                                                          <option value="{{$category->id}}">{{ $category->libelle }}</option>
+                                                      @endforeach
+                                                    </select>
                                                   </div>
                                             </div>
                                             <div class="modal-footer">

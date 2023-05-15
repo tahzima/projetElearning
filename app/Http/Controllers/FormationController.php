@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categorie;
 use App\Models\Formation;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,12 @@ class FormationController extends Controller
      */
     public function index()
     {
-        $formations = Formation::all();
+        // $formations = Formation::all();
+        $formations = Formation::with('categorie')->get();
+        $categories = Categorie::all();
         // return response()->json($formation);
-        return view('formation.index')->with('formations', $formations);
+        // return view('formation.index')->with('formations', $formations,'categories',$categories);
+        return view('formation.index', ['formations'=> $formations,'categories' => $categories]);
     }
 
     /**
@@ -39,6 +43,7 @@ class FormationController extends Controller
         $formation->programme = $request->input('programme');
         $formation->prix = $request->input('prix');
         $formation->dureeFormationParHeure = $request->input('dureeFormationParHeure');
+        $formation->categorie_id = $request->input('categorie_id');
 
         $formation->save();
 
@@ -76,6 +81,7 @@ class FormationController extends Controller
         $formation->programme = $request->input('programme');
         $formation->prix = $request->input('prix');
         $formation->dureeFormationParHeure = $request->input('dureeFormationParHeure');
+        $formation->categorie_id = $request->input('categorie_id');
 
         $formation->save();
 

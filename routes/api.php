@@ -76,6 +76,7 @@ Route::delete('/section/delete/{id}',[SectionController::class, 'destroy']);
 Route::get('/section/search/{id}',[SectionController::class, 'show']);
 
 Route::get('/user/all',[UserController::class, 'index']);
+Route::get('/user/allClient',[UserController::class, 'getClients']);
 Route::post('/user/add',[UserController::class, 'store']);
 Route::post('/user/update/{id}',[UserController::class, 'update']);
 Route::delete('/user/delete/{id}',[UserController::class, 'destroy']);

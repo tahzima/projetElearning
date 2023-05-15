@@ -16,6 +16,22 @@ class UserController extends Controller
         return response()->json($user);
     }
 
+    public function getClients()
+    {
+        // $user = User::all();
+        $clients = User::where('role', 'client')->get();
+        // return response()->json($clients);
+        return view('client.index')->with('clients', $clients);
+    }
+
+    public function getUtilisateurs()
+    {
+        // $user = User::all();
+        $clients = User::where('role', 'utilisateur')->get();
+        // return response()->json($clients);
+        return view('client.index')->with('clients', $clients);
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -27,16 +43,20 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function storeClient(Request $request)
     {
         $user = new User();
 
-        $user->nom = $request->input('name');
+        $user->name = $request->input('name');
         $user->email = $request->input('email');
-        $user->password = $request->input('password');
-        $user->email = $request->input('email');
+        $user->password = bcrypt($request->input('password'));
+        $user->role = 'client';
+        $user->profile_photo_path = $request->input('profile_photo_path');
+        // $file=$request->input('profile_photo_path');
+        // $path = $file->store('public/photos');
 
         $user->save();
+        return redirect()->back()->with('success', 'Data added successfully');
     }
 
     /**

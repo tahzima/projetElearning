@@ -35,10 +35,16 @@ class CategorieController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'libelle' => 'required',
+            'description' => 'required',
+            'categorie_id' => 'nullable', // you can set this to 'required' if you don't want to allow null values
+        ]);
         $categorie = new Categorie();
 
         $categorie->libelle = $request->input('libelle');
         $categorie->description = $request->input('description');
+        $categorie->categorie_id = $request->input('categorie_id');
 
         $categorie->save();
 
@@ -71,7 +77,7 @@ class CategorieController extends Controller
 
         $categorie->libelle = $request->input('libelle');
         $categorie->description = $request->input('description');
-        $categorie->categorie_id = $request->input('parent_id');
+        $categorie->categorie_id = $request->input('categorie_id');
 
         $categorie->save();
         return redirect()->back()->with('success', 'Data updated successfully');

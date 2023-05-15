@@ -70,6 +70,19 @@
 								</div> --}}
 
 								<div class="menu-item">
+									<a class="menu-link active" href="{{ route('home')}}">
+										<span class="menu-icon">
+											<span class="svg-icon svg-icon-2">
+												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo" viewBox="0 0 16 16">
+													<path fill-rule="evenodd" d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z"/>
+												  </svg>
+											</span>
+										</span>
+										<span class="menu-title">Home</span>
+									</a>
+								</div>
+
+								<div class="menu-item">
 									<a class="menu-link active" href="{{ route('formation')}}">
 										<span class="menu-icon">
 											<span class="svg-icon svg-icon-2">
@@ -96,7 +109,7 @@
 								</div>
 
 								<div class="menu-item">
-									<a class="menu-link active" href="">
+									<a class="menu-link active" href="{{ route('client')}}">
 										<span class="menu-icon">
 											<span class="svg-icon svg-icon-2">
 												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo" viewBox="0 0 16 16">
@@ -136,17 +149,6 @@
 
 							</div>
 						</div>
-					</div>
-					<div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
-						<a href="../../demo1/dist/documentation/getting-started.html" class="btn btn-custom btn-success w-100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss-="click" title="200+ in-house components and 3rd-party plugins">
-							<span class="btn-label">Docs &amp; Components</span>
-							<span class="svg-icon btn-icon svg-icon-2">
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-									<path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM15 17C15 16.4 14.6 16 14 16H8C7.4 16 7 16.4 7 17C7 17.6 7.4 18 8 18H14C14.6 18 15 17.6 15 17ZM17 12C17 11.4 16.6 11 16 11H8C7.4 11 7 11.4 7 12C7 12.6 7.4 13 8 13H16C16.6 13 17 12.6 17 12ZM17 7C17 6.4 16.6 6 16 6H8C7.4 6 7 6.4 7 7C7 7.6 7.4 8 8 8H16C16.6 8 17 7.6 17 7Z" fill="black" />
-									<path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="black" />
-								</svg>
-							</span>
-						</a>
 					</div>
 				</div>
 				<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
@@ -222,9 +224,6 @@
                                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                                                 @csrf
                                                             </form>
-
-
-
 												</div>
 											</div>
 										</div>
@@ -238,64 +237,6 @@
 							<div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
 								<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
 									<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Dashboard
-									<span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
-									<small class="text-muted fs-7 fw-bold my-1 ms-1">#XRS-45670</small>
-								</div>
-								<div class="d-flex align-items-center py-1">
-									<div class="me-4">
-										<a href="#" class="btn btn-sm btn-flex btn-light btn-active-success fw-bolder" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-										<span class="svg-icon svg-icon-5 svg-icon-gray-500 me-1">
-											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-												<path d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z" fill="black" />
-											</svg>
-										</span>
-										</a>
-										<div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_616838fb2edc9">
-											<div class="px-7 py-5">
-												<div class="fs-5 text-dark fw-bolder">Filter Options</div>
-											</div>
-											<div class="separator border-gray-200"></div>
-											<div class="px-7 py-5">
-												<div class="mb-10">
-													<label class="form-label fw-bold">Status:</label>
-													<div>
-														<select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Select option" data-dropdown-parent="#kt_menu_616838fb2edc9" data-allow-clear="true">
-															<option></option>
-															<option value="1">Approved</option>
-															<option value="2">Pending</option>
-															<option value="2">In Process</option>
-															<option value="2">Rejected</option>
-														</select>
-													</div>
-												</div>
-												<div class="mb-10">
-													<label class="form-label fw-bold">Member Type:</label>
-													<div class="d-flex">
-														<label class="form-check form-check-sm form-check-custom form-check-solid me-5">
-															<input class="form-check-input" type="checkbox" value="1" />
-															<span class="form-check-label">Author</span>
-														</label>
-														<label class="form-check form-check-sm form-check-custom form-check-solid">
-															<input class="form-check-input" type="checkbox" value="2" checked="checked" />
-															<span class="form-check-label">Customer</span>
-														</label>
-													</div>
-												</div>
-												<div class="mb-10">
-													<label class="form-label fw-bold">Notifications:</label>
-													<div class="form-check form-switch form-switch-sm form-check-custom form-check-solid">
-														<input class="form-check-input" type="checkbox" value="" name="notifications" checked="checked" />
-														<label class="form-check-label">Enabled</label>
-													</div>
-												</div>
-												<div class="d-flex justify-content-end">
-													<button type="reset" class="btn btn-sm btn-light btn-active-light-success me-2" data-kt-menu-dismiss="true">Reset</button>
-													<button type="submit" class="btn btn-sm btn-success" data-kt-menu-dismiss="true">Apply</button>
-												</div>
-											</div>
-										</div>
-									</div>
-									<a href="#" class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app" id="kt_toolbar_success_button">Create</a>
 								</div>
 							</div>
 						</div>
@@ -308,40 +249,9 @@
 							</div>
 						</div>
 					</div>
-					<div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
-						<div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
-							<div class="text-dark order-2 order-md-1">
-								<span class="text-muted fw-bold me-1">2021©</span>
-								<a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-success">Keenthemes</a>
-							</div>
-							<ul class="menu menu-gray-600 menu-hover-success fw-bold order-1">
-								<li class="menu-item">
-									<a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
-								</li>
-								<li class="menu-item">
-									<a href="https://keenthemes.com/support" target="_blank" class="menu-link px-2">Support</a>
-								</li>
-								<li class="menu-item">
-									<a href="https://1.envato.market/EA4JP" target="_blank" class="menu-link px-2">Purchase</a>
-								</li>
-							</ul>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
-
-		<div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
-			<span class="svg-icon">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-					<rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1" transform="rotate(90 13 6)" fill="black" />
-					<path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="black" />
-				</svg>
-			</span>
-		</div>
-
-
         <!-- scripts -->
-
 	</body>
 </html>

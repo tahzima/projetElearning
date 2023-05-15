@@ -5,46 +5,45 @@
 <div class="container">
     <div id="dash"></div>
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-16">
             <div class="card">
 
-                <div class="card-header"><h1>Categorie</h1></div>
+                <div class="card-header"><h1>Client</h1></div>
 
                 <div class="card-body">
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
-                        Ajouter Categorie
-                    </button>
+                    {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
+                        Ajouter Client
+                    </button> --}}
 
                     <!-- Modal -->
-                    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    {{-- <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Ajouter Categorie</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Ajouter Client</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <form action="{{ route('addcategory')}}" method="POST">
+                            <form action="{{ route('addClient')}}" method="POST">
 
                                 <div class="modal-body">
                                     {!! csrf_field() !!}
                                     <div class="mb-3">
-                                      <label for="libelle" class="form-label">libelle</label>
-                                      <input type="text" class="form-control" id="libelle" name="libelle">
+                                      <label for="name" class="form-label">Nom</label>
+                                      <input type="text" class="form-control" id="name" name="name">
                                     </div>
                                     <div class="mb-3">
-                                      <label for="description" class="form-label">description</label>
-                                      <input type="text" class="form-control" id="description" name="description">
+                                      <label for="profile_photo_path" class="form-label">Photo profile</label>
+                                      @csrf
+                                      <input type="file" class="form-control" id="profile_photo_path" name="profile_photo_path">
                                     </div>
                                     <div class="mb-3">
-                                      <label for="categorie_id" class="form-label">Categorie Parent</label>
-                                      {{-- <input type="text" class="form-control" id="description" name="description"> --}}
-                                      <select class="form-control"id="categorie_id" name="categorie_id">
-                                        <option></option>
-                                        @foreach ( $categories as $category)
-                                            <option value="{{$category->id}}">{{ $category->libelle }}</option>
-                                        @endforeach
-                                      </select>
+                                      <label for="email" class="form-label">Email</label>
+                                      <input type="text" class="form-control" id="email" name="email">
+                                    </div>
+                                    <div class="mb-3">
+                                      <label for="password" class="form-label">Password</label>
+                                      <input type="text" class="form-control" id="password" name="password">
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -54,7 +53,7 @@
                             </form>
                         </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <br>
                     <br>
                     <br>
@@ -63,67 +62,54 @@
                             <thead>
                               <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Libelle</th>
-                                <th scope="col">Description</th>
-                                <th scope="col">Parent</th>
+                                <th scope="col">Nom</th>
+                                <th scope="col">Email</th>
                                 <th scope="col">Action</th>
 
                               </tr>
                             </thead>
                             <tbody>
-                                @foreach ( $categories as $category)
+                                @foreach ( $clients as $client)
 
                                 <tr>
-                                  <th scope="row">{{ $category->id }}</th>
-                                  <td>{{ $category->libelle }}</td>
-                                  <td>{{ $category->description }}</td>
-                                  <td>{{ $category->categorie ? $category->categorie->libelle : "No Parent Categorie"}}</td>
+                                  <th scope="row">{{ $client->id }}</th>
+                                  <td>{{ $client->name }}</td>
+                                  <td>{{ $client->email }}</td>
                                   <td>
-                                    <form class="" action="{{ route('deleteCategory' , $category->id) }}" method="POST">
+                                    {{-- <form class="" action="{{ route('deleteClient' , $client->id) }}" method="POST">
 
-                                        {!! csrf_field() !!}
-                                        {{-- <input type="hidden" class="form-control" value="{{ $partenaire->id }}" id="nompartenaire" name="partenaireId"> --}}
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal{{ $category->id }}">
-                                            modifier
+                                        {!! csrf_field() !!} --}}
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal{{ $client->id }}">
+                                            Details
                                         </button>
-                                        <input name="_method" type="hidden" value="DELETE">
+                                        {{-- <input name="_method" type="hidden" value="DELETE">
                                         <button class="btn btn-danger show_confirm"  type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
                                             <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
                                         </svg></button>
 
-                                    </form>
+                                    </form> --}}
                                   </td>
                                 </tr>
 
                                 <!-- Modal -->
-                                <div class="modal fade" id="editModal{{ $category->id }}"  tabindex="-1" aria-labelledby="exampleModalLabel{{ $category->id }}" aria-hidden="true">
+                                {{-- <div class="modal fade" id="editModal{{ $client->id }}"  tabindex="-1" aria-labelledby="exampleModalLabel{{ $client->id }}" aria-hidden="true">
                                     <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel{{ $category->id }}">Modifier Categorie</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel{{ $client->id }}">Modifier Formation</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
-                                        <form action="{{ route('updateCategorie',$category->id)}}" method="POST">
+                                        <form action="{{ route('updateFormation',$client->id)}}" method="POST">
 
                                             <div class="modal-body">
                                                 {!! csrf_field() !!}
                                                 <div class="mb-3">
-                                                  <label for="libelle" class="form-label">libelle</label>
-                                                  <input type="text" class="form-control" id="libelle" name="libelle" value="{{ $category->libelle }}">
+                                                  <label for="nom" class="form-label">Nom</label>
+                                                  <input type="text" class="form-control" id="nom" name="nom" value="{{ $client->name }}">
                                                 </div>
                                                 <div class="mb-3">
-                                                  <label for="description" class="form-label">description</label>
-                                                  <input type="text" class="form-control" id="description" name="description" value="{{ $category->description }}">
-                                                </div>
-                                                <div class="mb-3">
-                                                  <label for="categorie_id" class="form-label">Categorie Parent</label>
-                                                  {{-- <input type="text" class="form-control" id="description" name="description"> --}}
-                                                  <select class="form-control"id="categorie_id" name="categorie_id">
-                                                    <option value="" >No Parent</option>
-                                                    @foreach ( $categories as $category)
-                                                        <option value="{{$category->id}}">{{ $category->libelle }}</option>
-                                                    @endforeach
-                                                  </select>
+                                                  <label for="description" class="form-label">Email</label>
+                                                  <input type="text" class="form-control" id="description" name="description" value="{{ $client->email }}">
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
@@ -133,7 +119,7 @@
                                         </form>
                                     </div>
                                     </div>
-                                </div>
+                                </div> --}}
 
                                 @endforeach
 

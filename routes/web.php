@@ -41,4 +41,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/formation/add',[FormationController::class, 'store'])->name('addformation');
     Route::post('/formation/update/{id}',[FormationController::class, 'update'])->name('updateFormation');
     Route::delete('/formation/delete/{id}',[FormationController::class, 'destroy'])->name('deleteFormation');
+
+    // Route::get('/user/all',[UserController::class, 'index']);
+    Route::get('/user/allClient',[UserController::class, 'getClients'])->name('client');
+    Route::post('/user/add',[UserController::class, 'storeClient'])->name('addClient');
+    Route::post('/user/update/{id}',[UserController::class, 'update'])->name('updateClient');
+    Route::delete('/user/delete/{id}',[UserController::class, 'destroy'])->name('deleteClient');
+    // Route::get('/user/search/{id}',[UserController::class, 'show'])->name('client');
 });
