@@ -62,4 +62,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/section/update/{id}',[SectionController::class, 'update'])->name('updateSection');
     Route::delete('/section/delete/{id}',[SectionController::class, 'destroy'])->name('deleteSection');
     // Route::get('/user/search/{id}',[UserController::class, 'show'])->name('client');
+
+    // Route::get('/user/all',[UserController::class, 'index']);
+    Route::get('/inscription/all',[InscriptionController::class, 'index'])->name('inscription');
+    Route::post('/inscription/add',[InscriptionController::class, 'store'])->name('addInscription');
+    Route::post('/inscription/update/{id}',[InscriptionController::class, 'update'])->name('updateInscription');
+    Route::delete('/inscription/delete/{id}',[InscriptionController::class, 'destroy'])->name('deleteInscription');
+    // Route::get('/user/search/{id}',[UserController::class, 'show'])->name('client');
 });
