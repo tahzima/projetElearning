@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Formation;
 use App\Models\Section;
 use Illuminate\Http\Request;
 
@@ -12,8 +13,11 @@ class SectionController extends Controller
      */
     public function index()
     {
-        $section = Section::all();
-        return response()->json($section);
+        $section = Section::with('formation')->get();
+        $formations = Formation::all();
+        // return response()->json($section);
+        // return view('section.index')->with('sections', $section);
+        return view('section.index', ['formations'=> $formations,'sections' => $section]);
     }
 
     /**
@@ -33,8 +37,11 @@ class SectionController extends Controller
 
         $section->libelle = $request->input('libelle');
         $section->description = $request->input('description');
+        $section->formation_id = $request->input('formation_id');
 
         $section->save();
+
+        return redirect()->back()->with('success', 'Data added successfully');
     }
 
     /**
@@ -43,7 +50,7 @@ class SectionController extends Controller
     public function show(string $id)
     {
         $section = Section::find($id);
-        return response()->json($section);
+        // return response()->json($section);
     }
 
     /**
@@ -63,8 +70,11 @@ class SectionController extends Controller
 
         $section->libelle = $request->input('libelle');
         $section->description = $request->input('description');
+        $section->formation_id = $request->input('formation_id');
 
         $section->save();
+
+        return redirect()->back()->with('success', 'Data updated successfully');
     }
 
     /**
@@ -76,7 +86,7 @@ class SectionController extends Controller
 
         if($section){
             $section->delete();
-            return response()->json(['message' => 'Section supprimée avec succès']);
+            return redirect()->back()->with('success', 'Data deleted successfully');
         }
         return response()->json(['message' => 'Impossible de trouver Section'], 404);
     }

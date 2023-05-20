@@ -48,4 +48,18 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/user/update/{id}',[UserController::class, 'update'])->name('updateClient');
     Route::delete('/user/delete/{id}',[UserController::class, 'destroy'])->name('deleteClient');
     // Route::get('/user/search/{id}',[UserController::class, 'show'])->name('client');
+
+    // Route::get('/user/all',[UserController::class, 'index']);
+    Route::get('/part/all',[PartController::class, 'index'])->name('part');
+    Route::post('/part/add',[PartController::class, 'store'])->name('addPart');
+    Route::post('/part/update/{id}',[PartController::class, 'update'])->name('updatePart');
+    Route::delete('/part/delete/{id}',[PartController::class, 'destroy'])->name('deletePart');
+    // Route::get('/user/search/{id}',[UserController::class, 'show'])->name('client');
+
+    // Route::get('/user/all',[UserController::class, 'index']);
+    Route::get('/section/all',[SectionController::class, 'index'])->name('section');
+    Route::post('/section/add',[SectionController::class, 'store'])->name('addSection');
+    Route::post('/section/update/{id}',[SectionController::class, 'update'])->name('updateSection');
+    Route::delete('/section/delete/{id}',[SectionController::class, 'destroy'])->name('deleteSection');
+    // Route::get('/user/search/{id}',[UserController::class, 'show'])->name('client');
 });

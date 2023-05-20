@@ -13,7 +13,8 @@ class PartController extends Controller
     public function index()
     {
         $part = Part::all();
-        return response()->json($part);
+        // return response()->json($part);
+        return view('part.index')->with('parts', $part);
     }
 
     /**
@@ -31,12 +32,20 @@ class PartController extends Controller
     {
         $part = new Part();
 
+        $fileNameVideo = time().'.'.$request->videoUrl->extension();
+        $request->videoUrl->move(public_path('uploads'),$fileNameVideo);
+
+        $fileNameImage = time().'.'.$request->imageUrl->extension();
+        $request->imageUrl->move(public_path('uploads'),$fileNameImage);
+
         $part->libelle = $request->input('libelle');
         $part->description = $request->input('description');
-        $part->videoUrl = $request->input('videoUrl');
-        $part->imageUrl = $request->input('imageUrl');
+        $part->videoUrl = $fileNameVideo;
+        $part->imageUrl = $fileNameImage;
 
         $part->save();
+
+        return redirect()->back()->with('success', 'Data added successfully');
     }
 
     /**
@@ -63,12 +72,20 @@ class PartController extends Controller
     {
         $part = Part::find($id);
 
+        $fileNameVideo = time().'.'.$request->videoUrl->extension();
+        $request->videoUrl->move(public_path('uploads'),$fileNameVideo);
+
+        $fileNameImage = time().'.'.$request->imageUrl->extension();
+        $request->imageUrl->move(public_path('uploads'),$fileNameImage);
+
         $part->libelle = $request->input('libelle');
         $part->description = $request->input('description');
-        $part->videoUrl = $request->input('videoUrl');
-        $part->imageUrl = $request->input('imageUrl');
+        $part->videoUrl = $fileNameVideo;
+        $part->imageUrl = $fileNameImage;
 
         $part->save();
+
+        return redirect()->back()->with('success', 'Data updated successfully');
     }
 
     /**
@@ -80,7 +97,7 @@ class PartController extends Controller
 
         if($part){
             $part->delete();
-            return response()->json(['message' => 'Part supprimée avec succès']);
+            return redirect()->back()->with('success', 'Data deleted successfully');
         }
         return response()->json(['message' => 'Impossible de trouver Part'], 404);
     }
