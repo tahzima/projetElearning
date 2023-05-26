@@ -12,9 +12,13 @@ class InscriptionController extends Controller
      */
     public function index()
     {
-        $inscription = Inscription::all();
+        // $inscription = Inscription::all();
+        $inscription = Inscription::with('formation')->get();
+        $inscription1 = Inscription::with('user')->get();
         // return response()->json($inscription);
+        // return view('inscription.index')->with('inscriptions', $inscriptions);
         return view('inscription.index')->with('inscriptions', $inscription);
+        // return view('inscription.index', ['inscriptions'=> $inscription,'inscription1' => $inscription1]);
     }
 
     /**

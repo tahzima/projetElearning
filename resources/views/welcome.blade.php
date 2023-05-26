@@ -118,7 +118,7 @@
                         <div class="caption">
                       <h6>Hello Students</h6>
                       <h2>Welcome to Education</h2>
-                      <p>This is an edu meeting HTML CSS template provided by <a rel="nofollow" href="https://templatemo.com/page/1" target="_blank">TemplateMo website</a>. This is a Bootstrap v5.1.3 layout. The video background is taken from Pexels website, a group of young people by <a rel="nofollow" href="https://www.pexels.com/@pressmaster" target="_blank">Pressmaster</a>.</p>
+                      {{-- <p>This is an edu meeting HTML CSS template provided by <a rel="nofollow" href="https://templatemo.com/page/1" target="_blank">TemplateMo website</a>. This is a Bootstrap v5.1.3 layout. The video background is taken from Pexels website, a group of young people by <a rel="nofollow" href="https://www.pexels.com/@pressmaster" target="_blank">Pressmaster</a>.</p> --}}
                       <div class="main-button-red">
                           <div class="scroll-to-section"><a href="#contact">Join Us Now!</a></div>
                       </div>
@@ -197,21 +197,19 @@
               <div class="row">
                 <div class="col-lg-12">
                   <div class="section-heading">
-                    <h2>Upcoming Meetings</h2>
+                    <h2>Tous Les Formations</h2>
                   </div>
                 </div>
                 <div class="col-lg-4">
                   <div class="categories">
-                    <h4>Meeting Catgories</h4>
+                    <h4>Catgories</h4>
                     <ul>
-                      <li><a href="#">Sed tempus enim leo</a></li>
-                      <li><a href="#">Aenean molestie quis</a></li>
-                      <li><a href="#">Cras et metus vestibulum</a></li>
-                      <li><a href="#">Nam et condimentum</a></li>
-                      <li><a href="#">Phasellus nec sapien</a></li>
+                      <li><a href="#">Web</a></li><br>
+                      <li><a href="#">Desktop</a></li><br>
+                      <li><a href="#">Mobile</a></li><br>
                     </ul>
                     <div class="main-button-red">
-                      <a href="meetings.html">All Upcoming Meetings</a>
+                      <a href="meetings.html">All Upcoming Categories</a>
                     </div>
                   </div>
                 </div>
@@ -229,8 +227,8 @@
                           <div class="date">
                             <h6>Nov <span>10</span></h6>
                           </div>
-                          <a href="meeting-details.html"><h4>New Lecturers Meeting</h4></a>
-                          <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
+                          <a href="meeting-details.html"><h4>React Native</h4></a>
+                          {{-- <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p> --}}
                         </div>
                       </div>
                     </div>
@@ -246,8 +244,8 @@
                           <div class="date">
                             <h6>Nov <span>24</span></h6>
                           </div>
-                          <a href="meeting-details.html"><h4>Online Teaching Techniques</h4></a>
-                          <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
+                          <a href="meeting-details.html"><h4>Android</h4></a>
+                          {{-- <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p> --}}
                         </div>
                       </div>
                     </div>
@@ -263,8 +261,8 @@
                           <div class="date">
                             <h6>Nov <span>26</span></h6>
                           </div>
-                          <a href="meeting-details.html"><h4>Higher Education Conference</h4></a>
-                          <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
+                          <a href="meeting-details.html"><h4>DOT.Net (C#)</h4></a>
+                          {{-- <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p> --}}
                         </div>
                       </div>
                     </div>
@@ -280,8 +278,8 @@
                           <div class="date">
                             <h6>Nov <span>30</span></h6>
                           </div>
-                          <a href="meeting-details.html"><h4>Student Training Meetup</h4></a>
-                          <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
+                          <a href="meeting-details.html"><h4>Angular</h4></a>
+                          {{-- <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p> --}}
                         </div>
                       </div>
                     </div>

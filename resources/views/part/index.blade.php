@@ -37,7 +37,7 @@
                                       <input type="text" class="form-control" id="description" name="description">
                                     </div>
                                     <div class="mb-3">
-                                      <label for="videoUrl" class="form-label">Uploade video pour la section</label>
+                                      <label for="videoUrl" class="form-label">Uploade video pour la part</label>
                                       <input type="file" class="form-control" id="videoUrl" name="videoUrl">
                                       {{-- <select class="form-control" name="niveauDifficulte" id="niveauDifficulte">
                                         <option value="facile">Facile</option>
@@ -46,7 +46,7 @@
                                       </select> --}}
                                     </div>
                                     <div class="mb-3">
-                                      <label for="imageUrl" class="form-label">Uploade image pour la section</label>
+                                      <label for="imageUrl" class="form-label">Uploade image pour la part</label>
                                       <input type="file" class="form-control" id="imageUrl" name="imageUrl">
                                     </div>
                                 </div>

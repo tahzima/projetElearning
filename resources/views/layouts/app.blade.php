@@ -121,7 +121,7 @@
 									</a>
 								</div>
 
-								<div class="menu-item">
+								{{-- <div class="menu-item">
 									<a class="menu-link active" href="">
 										<span class="menu-icon">
 											<span class="svg-icon svg-icon-2">
@@ -132,7 +132,7 @@
 										</span>
 										<span class="menu-title">Inscriptions</span>
 									</a>
-								</div>
+								</div> --}}
 								{{-- <div class="menu-item">
 									<a class="menu-link active" href="">
 										<span class="menu-icon">
