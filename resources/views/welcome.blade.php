@@ -390,7 +390,7 @@
                     <div class="item">
                       <img src="assets/images/course-01.jpg" alt="Course One">
                       <div class="down-content">
-                        <h4>Morbi tincidunt elit vitae justo rhoncus</h4>
+                        <h4>Formation TypeScript</h4>
                         <div class="info">
                           <div class="row">
                             <div class="col-8">
@@ -412,7 +412,7 @@
                     <div class="item">
                       <img src="assets/images/course-02.jpg" alt="Course Two">
                       <div class="down-content">
-                        <h4>Curabitur molestie dignissim purus vel</h4>
+                        <h4>Formation Ionic</h4>
                         <div class="info">
                           <div class="row">
                             <div class="col-8">
@@ -423,7 +423,7 @@
                               </ul>
                             </div>
                             <div class="col-4">
-                               <span>$180</span>
+                               <span>$18</span>
                             </div>
                           </div>
                         </div>
@@ -432,7 +432,7 @@
                     <div class="item">
                       <img src="assets/images/course-03.jpg" alt="">
                       <div class="down-content">
-                        <h4>Nulla at ipsum a mauris egestas tempor</h4>
+                        <h4>Formation Firebase</h4>
                         <div class="info">
                           <div class="row">
                             <div class="col-8">
@@ -444,7 +444,7 @@
                               </ul>
                             </div>
                             <div class="col-4">
-                               <span>$140</span>
+                               <span>$14</span>
                             </div>
                           </div>
                         </div>
@@ -453,7 +453,7 @@
                     <div class="item">
                       <img src="assets/images/course-03.jpg" alt="">
                       <div class="down-content">
-                        <h4>Morbi in libero blandit lectus cursus</h4>
+                        <h4>Formation React Native</h4>
                         <div class="info">
                           <div class="row">
                             <div class="col-8">
@@ -466,7 +466,7 @@
                               </ul>
                             </div>
                             <div class="col-4">
-                               <span>$480</span>
+                               <span>$48</span>
                             </div>
                           </div>
                         </div>
@@ -475,7 +475,29 @@
                     <div class="item">
                       <img src="assets/images/course-04.jpg" alt="">
                       <div class="down-content">
-                        <h4>Curabitur molestie dignissim purus</h4>
+                        <h4>Formation API Google Maps</h4>
+                        <div class="info">
+                          <div class="row">
+                            <div class="col-8">
+                              <ul>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                              </ul>
+                            </div>
+                            <div class="col-4">
+                               <span>$56</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <img src="assets/images/course-04.jpg" alt="">
+                      <div class="down-content">
+                        <h4>Formation ReactJS</h4>
                         <div class="info">
                           <div class="row">
                             <div class="col-8">
